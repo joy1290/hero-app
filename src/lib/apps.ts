@@ -1,5 +1,10 @@
+import fs from "fs";
+import path from "path";
+
 export const getAllApps = async () => {
-    const res = await fetch("http://localhost:3000/data.json", { next: { revalidate: 15 } });
-    const data = await res.json();
-    return data;
+  const filePath = path.join(process.cwd(), "public", "data.json");
+
+  const fileData = fs.readFileSync(filePath, "utf-8");
+
+  return JSON.parse(fileData);
 };
