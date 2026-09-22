@@ -1,5 +1,11 @@
-
+import Banner from "@/components/homepage/Banner";
+import TrendingApp from "@/components/homepage/TrendingApp";
 
 export default function Home() {
-  return <h2>Homepage</h2>
+  return (
+    <div>
+      <Banner />
+      <TrendingApp />
+    </div>
+  );
 }
